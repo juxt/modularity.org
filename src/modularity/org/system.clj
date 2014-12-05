@@ -45,13 +45,11 @@
   (merge (config-from-classpath)
          (user-config)))
 
-
-
 (defn http-listener-components [system config]
   (assoc system
     :http-listener-listener
     (->
-      (make new-webserver config)
+      (make new-webserver config :port 8002)
       (using [])
       (co-using []))))
 
@@ -110,7 +108,7 @@
   (apply system-map
     (apply concat
       (-> {}
-          
+
           (http-listener-components config)
           (modular-bidi-router-components config)
           (clostache-templater-components config)
