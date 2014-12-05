@@ -44,14 +44,11 @@
     (page templater router req
           (hiccup/html
            [:div
-            [:h1.cover-heading "Welcome"]
-            [:p.lead "Cover is a one-page template for
-                  building simple and beautiful home pages. Download,
-                  edit the text, and add your own fullscreen background
-                  photo to make it your own."]
-            [:p "This is a Clojure project called modularity.org, generated
-            from modular's bootstrap-cover template. This text can be
-            found in " [:code "modularity.org/website.clj"]] ]))))
+            [:h1.cover-heading "Modularity"]
+            [:p.lead "Create a Clojure-powered website like this one. We'll call it " [:tt "foo"] "."]
+            [:code.lead "lein new modular foo bootstrap-cover"]
+
+            ]))))
 
 (defn features [templater router]
   (fn [req]
@@ -67,7 +64,7 @@
              [:li "Co-dependencies"]
              [:li "Deployable with lein run"]
              ]
-            [:p "This list can be found in " [:code "modularity.org/website.clj"]]]))))
+            ]))))
 
 (defn about [templater router]
   (fn [req]
@@ -75,11 +72,7 @@
           (hiccup/html
            [:div
             [:h1.cover-heading "About"]
-            [:p.lead "You should
-            edit " [:code "modularity.org/website.clj"] ", locate
-            the " [:code "about"] " function and edit the function
-            defintion to display your details here, describing who you are
-            and why you started this project."]]))))
+            [:p "Join the Google group: modularity"]]))))
 
 ;; Components are defined using defrecord.
 
