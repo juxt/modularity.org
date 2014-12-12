@@ -1,4 +1,4 @@
-(ns modularity.org.website
+(ns modularity.web.website
   (:require
    [bidi.bidi :refer (path-for)]
    [bidi.ring :refer (redirect)]

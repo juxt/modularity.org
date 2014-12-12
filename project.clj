@@ -27,7 +27,7 @@
    [ch.qos.logback/logback-classic "1.0.7" :exclusions [org.slf4j/slf4j-api]]
    ]
 
-  :main modularity.org.main
+  :main modularity.web.main
 
   :repl-options {:init-ns user
                  :welcome (println "Type (dev) to start")}

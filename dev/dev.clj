@@ -6,7 +6,7 @@
    [clojure.tools.namespace.repl :refer (refresh refresh-all)]
    [com.stuartsierra.component :as component]
    [tangrammer.component.co-dependency :as co-dependency]
-   [modularity.org.system :refer (config new-system-map new-dependency-map new-co-dependency-map)]
+   [modularity.web.system :refer (config new-system-map new-dependency-map new-co-dependency-map)]
    [modular.maker :refer (make)]
    [modular.wire-up :refer (normalize-dependency-map)]))
 

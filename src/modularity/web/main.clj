@@ -1,21 +1,21 @@
-(ns modularity.org.main
+(ns modularity.web.main
   "Main entry point"
   (:require clojure.pprint)
   (:gen-class))
 
 (defn -main [& args]
   ;; We eval so that we don't AOT anything beyond this class
-  (eval '(do (require 'modularity.org.system)
-             (require 'modularity.org.main)
+  (eval '(do (require 'modularity.web.system)
+             (require 'modularity.web.main)
              (require 'com.stuartsierra.component)
              (require 'tangrammer.component.co-dependency)
 
              (require 'clojure.java.browse)
 
-             (println "Starting modularity.org")
+             (println "Starting modularity.org website")
 
              (let [system (->
-                           (modularity.org.system/new-production-system)
+                           (modularity.web.system/new-production-system)
                            tangrammer.component.co-dependency/start-system)]
 
                (println "System started")

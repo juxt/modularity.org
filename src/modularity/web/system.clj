@@ -1,4 +1,4 @@
-(ns modularity.org.system
+(ns modularity.web.system
   "Components and their dependency relationships"
   (:refer-clojure :exclude (read))
   (:require
@@ -12,7 +12,7 @@
    [modular.bidi :refer (new-router new-static-resource-service)]
    [modular.clostache :refer (new-clostache-templater)]
    [modular.http-kit :refer (new-webserver)]
-   [modularity.org.website :refer (new-website)]))
+   [modularity.web.website :refer (new-website)]))
 
 (defn ^:private read-file
   [f]
