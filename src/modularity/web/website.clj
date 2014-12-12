@@ -17,16 +17,12 @@
    [:ul.nav.masthead-nav
     (for [[k label] [[::index "Home"]
                      [::features "Features"]
-                     [::about "About"]]
-          ;; This demonstrates the generation of hyperlinks from
-          ;; keywords.
-
-          ;; by the way, router is deref'd because it's a
-          ;; co-dependency, this is likely to change to potemkin's
-          ;; def-map-type in future releases, so a deref will be
-          ;; unnecessary (and deprecated)
+                     [:modularity.web.docs/docs "Docs"]
+                     [::about "About"]
+                     ]
 
           :let [href (path-for (:routes @router) k)]]
+
       [:li (when (= href uri) {:class "active"})
        [:a (merge {:href href}) label]]
       )]))

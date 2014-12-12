@@ -8,6 +8,7 @@
   [
    [hiccup "1.0.5"]
    [com.stuartsierra/component "0.2.2"]
+   [endophile "0.1.2"]
    [juxt.modular/bidi "0.5.4"]
    [juxt.modular/clostache "0.6.0"]
    [juxt.modular/http-kit "0.5.1"]
@@ -25,6 +26,7 @@
    [prismatic/plumbing "0.2.2"]
    [prismatic/schema "0.2.1"]
    [ch.qos.logback/logback-classic "1.0.7" :exclusions [org.slf4j/slf4j-api]]
+   [faker "0.2.2"]
    ]
 
   :main modularity.web.main

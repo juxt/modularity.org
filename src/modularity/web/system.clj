@@ -12,7 +12,8 @@
    [modular.bidi :refer (new-router new-static-resource-service)]
    [modular.clostache :refer (new-clostache-templater)]
    [modular.http-kit :refer (new-webserver)]
-   [modularity.web.website :refer (new-website)]))
+   [modularity.web.website :refer (new-website)]
+   [modularity.web.docs :refer (new-docs-website)]))
 
 (defn ^:private read-file
   [f]
@@ -61,7 +62,6 @@
       (using [])
       (co-using []))))
 
-
 (defn clostache-templater-components [system config]
   (assoc system
     :clostache-templater-templater
@@ -83,6 +83,11 @@
     :bootstrap-cover-website-website
     (->
       (make new-website config)
+      (using [])
+      (co-using []))
+    :bootstrap-cover-website-docs
+    (->
+      (make new-docs-website config)
       (using [])
       (co-using []))))
 
@@ -108,7 +113,6 @@
   (apply system-map
     (apply concat
       (-> {}
-
           (http-listener-components config)
           (modular-bidi-router-components config)
           (clostache-templater-components config)
@@ -119,11 +123,26 @@
 
 (defn new-dependency-map
   []
-  {:http-listener-listener {:request-handler :modular-bidi-router-webrouter}, :modular-bidi-router-webrouter {:public-resources :public-resources-public-resources, :website :bootstrap-cover-website-website, :twitter-bootstrap :twitter-bootstrap-service, :jquery :jquery-resources}, :bootstrap-cover-website-website {:templater :clostache-templater-templater}})
+  {:http-listener-listener
+   {:request-handler :modular-bidi-router-webrouter}
+
+   :modular-bidi-router-webrouter
+   {:public-resources :public-resources-public-resources
+    :website :bootstrap-cover-website-website
+    :docs :bootstrap-cover-website-docs
+    :twitter-bootstrap :twitter-bootstrap-service
+    :jquery :jquery-resources}
+
+   :bootstrap-cover-website-website
+   {:templater :clostache-templater-templater}
+
+   :bootstrap-cover-website-docs
+   {:templater :clostache-templater-templater}})
 
 (defn new-co-dependency-map
   []
-  {:bootstrap-cover-website-website {:router :modular-bidi-router-webrouter}})
+  {:bootstrap-cover-website-website {:router :modular-bidi-router-webrouter}
+   :bootstrap-cover-website-docs {:router :modular-bidi-router-webrouter}})
 
 (defn new-production-system
   "Create the production system"
