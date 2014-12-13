@@ -16,7 +16,6 @@
   (hiccup/html
    [:ul.nav.masthead-nav
     (for [[k label] [[::index "Home"]
-                     [::features "Features"]
                      [:modularity.web.book/book "Book"]
                      [::about "About"]
                      ]
@@ -46,22 +45,6 @@
 
             ]))))
 
-(defn features [templater router]
-  (fn [req]
-    (page templater router req
-          (hiccup/html
-           [:div
-            [:h1.cover-heading "Features"]
-            [:p.lead "bootstrap-cover exhibits the following :-"]
-            [:ul.lead
-             [:li "A working Clojure-powered website using Stuart Sierra's 'reloaded' workflow and component library"]
-             [:li "A fully-commented route-contributing website component"]
-             [:li [:a {:href "https://github.com/juxt/bidi"} "Bidi"] " routing"]
-             [:li "Co-dependencies"]
-             [:li "Deployable with lein run"]
-             ]
-            ]))))
-
 (defn about [templater router]
   (fn [req]
     (page templater router req
@@ -81,7 +64,6 @@
     ;; Return a map between some keywords and their associated Ring
     ;; handlers
     {::index (index templater router)
-     ::features (features templater router)
      ::about (about templater router)})
 
   ;; Return a bidi route structure, mapping routes to keywords defined
@@ -89,7 +71,6 @@
   ;; hyperlinks from known keywords.
   (routes [_] ["/" {"index.html" ::index
                     "" (redirect ::index)
-                    "features.html" ::features
                     "about.html" ::about}])
 
   ;; A WebService can be 'mounted' underneath a common uri context
