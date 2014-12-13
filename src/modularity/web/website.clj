@@ -4,11 +4,13 @@
    [bidi.ring :refer (redirect)]
    [clojure.pprint :refer (pprint)]
    [clojure.tools.logging :refer :all]
+   [clojure.java.io :as io]
    [com.stuartsierra.component :refer (using)]
    [hiccup.core :as hiccup]
    [modular.bidi :refer (WebService as-request-handler)]
    [modular.ring :refer (WebRequestHandler)]
    [modular.template :refer (render-template template-model)]
+   [modularity.web.markdown :refer (markdown)]
    [ring.util.response :refer (response)]
    [tangrammer.component.co-dependency :refer (co-using)]))
 
@@ -51,7 +53,9 @@
           (hiccup/html
            [:div
             [:h1.cover-heading "About"]
-            [:p "Join the Google group: modularity"]]))))
+            [:div
+             (markdown (io/resource "markdown/about.md"))]
+            ]))))
 
 ;; Components are defined using defrecord.
 
