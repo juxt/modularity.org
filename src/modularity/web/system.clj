@@ -13,7 +13,7 @@
    [modular.clostache :refer (new-clostache-templater)]
    [modular.http-kit :refer (new-webserver)]
    [modularity.web.website :refer (new-website)]
-   [modularity.web.docs :refer (new-docs-website)]))
+   [modularity.web.book :refer (new-book-website)]))
 
 (defn ^:private read-file
   [f]
@@ -85,9 +85,9 @@
       (make new-website config)
       (using [])
       (co-using []))
-    :bootstrap-cover-website-docs
+    :bootstrap-cover-website-book
     (->
-      (make new-docs-website config)
+     (make new-book-website config :bookdir :modular.maker/required)
       (using [])
       (co-using []))))
 
@@ -129,20 +129,20 @@
    :modular-bidi-router-webrouter
    {:public-resources :public-resources-public-resources
     :website :bootstrap-cover-website-website
-    :docs :bootstrap-cover-website-docs
+    :book :bootstrap-cover-website-book
     :twitter-bootstrap :twitter-bootstrap-service
     :jquery :jquery-resources}
 
    :bootstrap-cover-website-website
    {:templater :clostache-templater-templater}
 
-   :bootstrap-cover-website-docs
+   :bootstrap-cover-website-book
    {:templater :clostache-templater-templater}})
 
 (defn new-co-dependency-map
   []
   {:bootstrap-cover-website-website {:router :modular-bidi-router-webrouter}
-   :bootstrap-cover-website-docs {:router :modular-bidi-router-webrouter}})
+   :bootstrap-cover-website-book {:router :modular-bidi-router-webrouter}})
 
 (defn new-production-system
   "Create the production system"

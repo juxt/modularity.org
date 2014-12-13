@@ -17,7 +17,7 @@
    [:ul.nav.masthead-nav
     (for [[k label] [[::index "Home"]
                      [::features "Features"]
-                     [:modularity.web.docs/docs "Docs"]
+                     [:modularity.web.book/book "Book"]
                      [::about "About"]
                      ]
 
