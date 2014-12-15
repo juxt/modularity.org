@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8"/>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
--->
+      -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,46 +29,54 @@
 
   <body role="document">
 
-   <div class="site-wrapper">
 
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand"> modularity.org </h3>
-              {{{menu}}}
-            </div>
+    <div class="container">
+      <div class="row">
+        <div class="masthead clearfix">
+          <a href="/index.html">
+          <div class="inner">
+            <h3 class="masthead-brand">modularity.org</h3>
           </div>
-
-          <div class="inner cover">
-            {{{content}}}
-<!--
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
-            </p>
--->
-          </div>
-
-          <div class="mastfoot">
-            <hr>
-            <div class="inner">
-              <p>Modularity<br/>Copyright © 2014, Malcolm Sparks</p>
-            </div>
-          </div>
-
+          </a>
         </div>
+      </div>
 
+      <div class="row">
+        <div class="col-lg-2">
+          <ul class="nav nav-stacked">
+            {{#chapters}}
+            <li><a href="{{link}}">{{title}}</a></li>
+            {{/chapters}}
+          </ul>
+        </div>
+        <div class="col-lg-10">
+          {{{content}}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="mastfoot">
+          <hr>
+          <div class="inner">
+            <p>Modularity<br/>Copyright © 2014, Malcolm Sparks</p>
+          </div>
+        </div>
       </div>
 
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/jquery/jquery.min.js"></script>
 
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
+</div>
 
-  </body>
+</div>
+
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/jquery/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
 </html>

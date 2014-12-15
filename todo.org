@@ -1,3 +1,5 @@
+Since modularity.org is the website for modular, transform the lein-template manifest.edn into documentation
+
 * Frontmatter
 - [ ] Remove features
 * Docs

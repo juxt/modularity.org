@@ -28,7 +28,9 @@ html,
 body {
   height: 100%;
   background-color: #333;
+  background: url("/static/background.jpg") no-repeat scroll 0px 100% / cover transparent;
 }
+
 body {
   color: #fff;
   text-align: center;
@@ -53,9 +55,17 @@ body {
   margin-left: auto;
 }
 
+h1.cover-heading {
+    font-size: 320%;
+}
+
 /* Padding for spacing */
 .inner {
-  padding: 30px;
+    padding: 30px;
+}
+
+.inner p {
+    font-size: 160%;
 }
 
 

@@ -12,6 +12,16 @@
    [schema.core :as s]
    [tangrammer.component.co-dependency :refer (co-using)]))
 
+(defn get-chapters [bookdir]
+  (for [line (line-seq (io/reader (io/file (io/as-file bookdir) "Book.txt")))
+        :let [f (io/file bookdir line)]
+        :when (and (.isFile f) (.exists f))
+        :let [chapter (second (re-matches #"(.*).md" line))
+              raw (first (line-seq (io/reader f)))
+              title (second (re-matches #"# (.*)" raw))]]
+    {:title title
+     :link (str chapter ".html")}))
+
 (defn page [templater router req content]
   (response
    (render-template
@@ -25,18 +35,19 @@
           (hiccup/html
            [:div {:style "list-bullet-style: none"}
             [:h1.cover-heading "Book"]
+            [:p (markdown (io/file bookdir "frontmatter.md"))]
             [:ul
-             (for [line (line-seq (io/reader (io/file (io/as-file bookdir) "Book.txt")))
-                   :let [f (io/file bookdir line)]
-                   :when (and (.isFile f) (.exists f))
-                   :let [raw (first (line-seq (io/reader f)))
-                         title (second (re-matches #"# (.*)" raw))]]
-               [:li [:a {:href (str (second (re-matches #"(.*).md" line)) ".html")} title]])]]))))
+             (for [{:keys [title link]} (get-chapters bookdir)]
+               [:li [:a {:href link} title]])]]))))
 
 (defn chapter [templater router bookdir]
   (fn [{{chapter :chapter} :route-params :as req}]
-    (page templater router req
-          (markdown (io/file (io/as-file bookdir) (str chapter ".md"))))))
+    (response
+     (render-template
+      templater
+      "templates/book.html.mustache"    ; our Mustache template
+      {:chapters (get-chapters bookdir)
+       :content (markdown (io/file (io/as-file bookdir) (str chapter ".md")))}))))
 
 (defrecord Website [templater router bookdir]
 
