@@ -20,8 +20,8 @@
   (hiccup/html
    [:ul.nav.masthead-nav
     (for [[k label] [[::index "Home"]
-                     [:modularity.web.book/book "Book"]
                      [::templates "Templates"]
+                     [:modularity.web.book/book "Book"]
                      [::about "About"]
                      ]
 
