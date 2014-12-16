@@ -69,9 +69,10 @@
            [:div
             [:h1.cover-heading "Available templates"]
             [:div
-             (markdown (io/resource "markdown/templates.md"))]
-            (for [tm (keys (:application-templates (load-manifest manifest "foo")))]
-              [:p [:a {:href (path-for (:routes @router) ::template :template tm)} tm]])])
+             (markdown (io/resource "markdown/templates.md"))
+             [:p "The following templates are available :-"]
+             (for [tm (keys (:application-templates (load-manifest manifest "foo")))]
+               [:p [:a {:href (path-for (:routes @router) ::template :template tm)} tm]])]])
            nil)))
 
 (defn template-page [templater router manifest]
