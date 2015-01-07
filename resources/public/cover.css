@@ -28,7 +28,8 @@ html,
 body {
   height: 100%;
   background-color: #333;
-  background: url("/static/background.jpg") no-repeat scroll 0px 100% / cover black;
+  background-image: url("/static/lego.jpg");
+  background-size: 140%;
 }
 
 body {
