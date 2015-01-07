@@ -19,3 +19,12 @@ div.container {
 .masthead, .mastfoot {
     margin-left: 2em;
 }
+
+div.logo {
+    float: right;
+    margin-right: 10px;
+}
+
+.mastfoot .inner img.logo {
+    height: 12pt;
+}
