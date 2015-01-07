@@ -8,3 +8,7 @@ development of software that is _modular_, improving both the _flexibility_ and 
 [this site](https://github.com/juxt/modularity.org)
 
 [book](https://github.com/malcolmsparks/modularity-book)
+
+## Contact
+
+I'd love to hear from you. Please send any feedback to [malcolm@juxt.pro](mailto:malcolm@juxt.pro?subject=modularity.org)
