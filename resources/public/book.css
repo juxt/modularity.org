@@ -4,6 +4,7 @@ body {
   background-color: #333;
   background-image: url("/static/lego.jpg");
   background-size: 140%;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 body {
@@ -27,4 +28,19 @@ div.logo {
 
 .mastfoot .inner img.logo {
     height: 12pt;
+}
+
+code {
+    color: black;
+}
+
+.console {
+    background: black;
+    color: green;
+    font-weight: bold;
+}
+
+.console::before {
+    content: "> ";
+    font-weight: normal;
 }

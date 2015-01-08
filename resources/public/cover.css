@@ -172,3 +172,14 @@ h1.cover-heading {
     width: 700px;
   }
 }
+
+.console {
+    background: black;
+    color: green;
+    font-weight: bold;
+}
+
+.console::before {
+    content: "> ";
+    font-weight: normal;
+}

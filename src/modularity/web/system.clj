@@ -82,12 +82,12 @@
   (assoc system
     :bootstrap-cover-website-website
     (->
-      (make new-website config :manifest :modular.maker/required)
+        (make new-website config :manifest-file :modular.maker/required :modular-dir :modular.maker/required)
       (using [])
       (co-using []))
     :bootstrap-cover-website-book
     (->
-     (make new-book-website config :bookdir :modular.maker/required)
+     (make new-book-website config :book-dir :modular.maker/required)
       (using [])
       (co-using []))))
 
