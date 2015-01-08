@@ -103,7 +103,7 @@
                 [:div
                  [:h2 "Incantation"]
                  [:p "To create a project called " [:tt "foo"] " based on this template, type this in a command line shell :-"]
-                 [:code.lead.console (format "lein new modular foo %s" template)]
+                 [:code.console (format "lein new modular foo %s" template)]
 
                  [:h2 "Modules"]
                  (for [m modules]
