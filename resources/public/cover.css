@@ -32,6 +32,12 @@ body {
   background-size: 140%;
 }
 
+h1,h2,h3 {
+    font-family: "Swedish Sans", monospace;
+    font-weight: 400;
+/*    font-family: "Syncopate Bold"; */
+}
+
 body {
   color: #fff;
   text-align: center;
