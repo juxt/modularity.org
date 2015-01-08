@@ -17,6 +17,13 @@ div.container {
     min-height: 100%;
 }
 
+p { text-align: justify; }
+
+@media (min-width: 768px) {
+    p { margin-right: 2em;
+        text-align: left; }
+}
+
 .masthead, .mastfoot {
     margin-left: 2em;
 }
