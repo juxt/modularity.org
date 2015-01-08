@@ -4,7 +4,7 @@ body {
   background-color: #333;
   background-image: url("/static/lego.jpg");
   background-size: 140%;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: SwedenSans, 'Source Sans Pro', sans-serif;
 }
 
 body {

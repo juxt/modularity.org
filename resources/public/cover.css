@@ -32,10 +32,9 @@ body {
   background-size: 140%;
 }
 
-h1,h2,h3 {
-    font-family: "Swedish Sans", monospace;
+h1,h2,h3,p {
+    font-family: SwedenSans, monospace;
     font-weight: 400;
-/*    font-family: "Syncopate Bold"; */
 }
 
 body {
