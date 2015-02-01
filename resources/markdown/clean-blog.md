@@ -13,7 +13,7 @@ All this in less than 500 lines of code :)
 
 ## Getting started
 
-The lein command will create a directory with the name of your project. `cd` into this directory and run `lein run` which will run your blogsite and launch a browser so you can view it.
+The lein command (see below for the actual incantation) will create a directory with the name of your project. `cd` into this directory and run `lein run` which will run your blogsite and launch a browser so you can view it.
 
 If you prefer to generate the static content instead, use `lein gen`.
 
