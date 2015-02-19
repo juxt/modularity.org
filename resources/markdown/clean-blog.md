@@ -33,7 +33,7 @@ Refer to examples from [my blog sources](https://github.com/malcolmsparks/malcol
 
 ## Developing the site
 
-If you want to hack on the Clojure code to add functionality, feel welcome — that's the really whole point! Instead of running `lein run` you should run `lein repl`, then type `(dev)` to compile and `(go)` to start the components, then make code changes, then hit `(reset)` which will reload your modified code and restart all the components.
+If you want to hack on the Clojure code to add functionality, feel welcome — that's really the whole point! Instead of running `lein run` you should run `lein repl`, then type `(dev)` to compile and `(go)` to start the components, then make code changes, then hit `(reset)` which will reload your modified code and restart all the components.
 
 Components are defined in the `system.clj` file, at the bottom of the `src/` directory.
 
