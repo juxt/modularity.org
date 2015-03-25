@@ -55,8 +55,13 @@
           (hiccup/html
            [:div
             [:h1.cover-heading "Modularity"]
-            [:p.lead "Create a Clojure-powered website like this one. We'll call it " [:tt "foo"] "."]
-            [:code.lead.console "lein new modular foo bootstrap-cover"]]))))
+            [:p.lead "Create a Clojure-powered website like this one." [:tt "foo"] "."]
+            [:p "First install Java (version 8 or later)"]
+            [:p "Then install " [:a {:href "http://leiningen.org/"} "Leiningen"] " (version 2.3.1 or later)"]
+            [:p "Think of a name for your project (we'll call ours "  [:tt "foo"] ")."]
+            [:p "Now open a console and type the following :-"]
+            [:code.lead.console "lein new modular foo bootstrap-cover"]
+            ]))))
 
 (defn modular-intro [modular-dir]
   (->>
