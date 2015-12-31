@@ -33,6 +33,7 @@
    ]
 
   :main modularity.web.main
+  :jvm-opts ["-Xmx512m"]
 
   :repl-options {:init-ns user
                  :welcome (println "Type (dev) to start")}
